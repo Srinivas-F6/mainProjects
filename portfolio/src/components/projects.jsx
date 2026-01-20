@@ -5,25 +5,19 @@ const projects = [
         id: 1,
         title: "Career Guaidance",
         description: "A career guaidance website using react js",
-        image: "/project1",
+        image: "./projects/careerguaidance.png",
         tags: ["react", "Material UI", "Spring boot"],
         deploy: "",
+        github:"https://github.com/Srinivas-F6/srinivas_portfolio.git"
     },
     {
         id: 2,
-        title: "Career Guaidance",
+        title: "Food Menu",
         description: "A career guaidance website using react js",
-        image: "/project1",
-        tags: ["react", "Material UI", "Spring boot"],
+        image: "./projects/menu.png",
+        tags: ["HTML", "CSS", "JavaScript"],
         deploy: "",
-    },
-    {
-        id: 3,
-        title: "Career Guaidance",
-        description: "A career guaidance website using react js",
-        image: "/project1",
-        tags: ["react", "Material UI", "Spring boot"],
-        deploy: "",
+        github:"https://github.com/Srinivas-F6/Food_MenuCard.git",
     },
 ];
 
@@ -43,18 +37,18 @@ export function Projects() {
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {
-                        projects.map((project, key) => (
+                        projects.map((project) => (
                             <div className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover">
                                 <div className="h-48 overflow-hidden">
-                                    <img src={project.image} alt={project.title}
+                                    <img src={project.image} alt={project.title} key={project.id}
                                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                     />
                                 </div>
                                 <div className="p-6">
                                     <div className="flex flex-wrap gap-2 mb-4">
                                         {
-                                            project.tags.map((tag) => (
-                                                <span className="px-2 py-1 text-xs font-medium rounded-full bg-secondary text-secondary">
+                                            project.tags.map((tag,k) => (
+                                                <span key={k} className="px-2 py-1 text-xs font-medium rounded-full bg-secondary text-secondary">
                                                     {tag}
                                                 </span>
                                             ))
@@ -64,12 +58,11 @@ export function Projects() {
                                     <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
                                     <div className="flex justify-between items-center">
                                         <div className="flex space-x-3">
-                                            <a href={project.demoUrl} target="_blank" className="text-foreground/80 hover:text-primary transition-colors duration-300">
+                                            <a href={project.deploy} target="_blank" className="text-foreground/80 hover:text-primary transition-colors duration-300">
                                                 <ExternalLink size={20} />
                                             </a>
-                                            <a>
-                                                <GithubIcon />
-
+                                            <a href={project.github} target="_blank" className="text-foreground/80 hover:text-primary transition-colors duration-300">
+                                                <GithubIcon size={20}/>
                                             </a>
                                         </div>
                                     </div>

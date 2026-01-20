@@ -3,29 +3,28 @@ import { useState } from "react";
 import { cn } from "../lib/utils";
 
 const skills = [
-    { name: "HTML", level: 44, category: "Front-end" },
-    { name: "CSS", level: 44, category: "Front-end" },
-    { name: "JavaScript", level: 44, category: "Front-end" },
-    { name: "React.js", level: 44, category: "Front-end" },
-
-    { name: "Spring Framework", level: 44, category: "Back-end" },
-    { name: "Spring Boot", level: 44, category: "Back-end" },
-    { name: "Spring Data JPA", level: 44, category: "Back-end" },
-    { name: "Spring Security", level: 44, category: "Back-end" },
-    { name: "REST APIs", level: 44, category: "Back-end" },
+    { name: "HTML", level: 90, category: "Front-end" },
+    { name: "CSS", level: 80, category: "Front-end" },
+    { name: "JavaScript", level: 85, category: "Front-end" },
+    { name: "React.js", level: 90, category: "Front-end" },
+,
+    { name: "Spring Boot", level: 80, category: "Back-end" },
+    { name: "Spring Data JPA", level: 95, category: "Back-end" },
+    { name: "Spring Security", level: 90, category: "Back-end" },
+    { name: "REST APIs", level: 97, category: "Back-end" },
 
     { name: "Java", level: 94, category: "Programming Language" },
-    { name: "Python", level: 74, category: "Programming Language" },
-    { name: "C", level: 54, category: "Programming Language" },
-    { name: "SQL", level: 84, category: "Programming Language" },
+    { name: "Python", level: 75, category: "Programming Language" },
+    { name: "C", level: 60, category: "Programming Language" },
+    { name: "SQL", level: 80, category: "Programming Language" },
 
-    { name: "Git", level: 44, category: "Tools" },
-    { name: "GitHub", level: 44, category: "Tools" },
-    { name: "VS Code", level: 44, category: "Tools" },
-    { name: "Eclipse", level: 44, category: "Tools" },
+    { name: "Git", level: 90, category: "Tools" },
+    { name: "GitHub", level: 90, category: "Tools" },
+    { name: "VS Code", level: 95, category: "Tools" },
+    { name: "Eclipse", level: 95, category: "Tools" },
 
-    { name: "MySQL", level: 44, category: "Database" },
-    { name: "MongoDB", level: 44, category: "Database" },
+    { name: "MySQL", level: 85, category: "Database" },
+    { name: "MongoDB", level: 75, category: "Database" },
 ]
 
 const categories = ["all", "Front-end", "Back-end", "Tools", "Programming Language", "Database"];
