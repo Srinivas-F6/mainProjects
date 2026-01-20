@@ -1,6 +1,26 @@
 import { Instagram, Linkedin, Mail, MapPin, Phone,Send } from "lucide-react"
 import { cn } from "../lib/utils"
+import { useToast } from "../hooks/usetoast"
+import { useState } from "react";
+
 export function Contact() {
+
+   const {toast} = useToast();
+   const [isSubmitted, setIsSubmitted] = useState(false);
+
+   const handleSubmit = (e)=>{
+      e.preventDefault()
+      
+      setIsSubmitted(true);
+      setTimeout(()=>{
+        toast({
+            title: "Message Sent",
+            description:"Thank you for your message. I'll get back to you soon.",
+        });
+        setIsSubmitted(false);
+      },1500)
+   }
+
     return (
         <section id="contact" className="py-24 px-4 relative bg-secondary/30">
             <div className="container mx-auto max-w-sxl">
@@ -82,7 +102,7 @@ export function Contact() {
                     </div>
                     <div className="bg-card p-8 rounded-lg shadow-xs">
                          <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
-                         <form className="space-y-6" >
+                         <form className="space-y-6"  onSubmit={handleSubmit}>
                             <div>
                                 <label htmlFor="name" className="block text-sm font-medium mb-2 text-primary">{" "}Your Name</label>
                                 <input type="text" id="name" name="name" className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outlind-hidden focus:ring-2 focus:ring-primary" 
@@ -99,10 +119,13 @@ export function Contact() {
                                        placeholder="message.."
                                 required/>
                             </div>
-                            <button type="submit" className={cn(
+                            <button type="submit"
+                              disabled = {isSubmitted}
+                             className={cn(
                                 "cosmic-button w-full flex items-center justify-center gap-3"
                             )}>
-                                 Send Message <Send size={17}/>
+                            { isSubmitted  ? "..." : "Send Message" } 
+                            <Send size={17}/>
                             </button>
                          </form>
                     </div>
