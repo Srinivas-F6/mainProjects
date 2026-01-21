@@ -4,16 +4,16 @@ const projects = [
     {
         id: 1,
         title: "Career Guaidance",
-        description: "A career guaidance website using react js",
+        description: "Career Guidance Website helps students and professionals discover the right career path based on their skills, interests, and goals.",
         image: "./projects/careerguaidance.png",
         tags: ["react", "Material UI", "Spring boot"],
         deploy: "",
-        github:"https://github.com/Srinivas-F6/srinivas_portfolio.git"
+        github:"https://github.com/Srinivas-F6/careerguaidance_project.git"
     },
     {
         id: 2,
         title: "Food Menu",
-        description: "A career guaidance website using react js",
+        description: "Food Menu Website lets users easily explore a variety of delicious dishes, choose their favorites, and enjoy a smooth food selection experience.",
         image: "./projects/menu.png",
         tags: ["HTML", "CSS", "JavaScript"],
         deploy: "",
@@ -24,7 +24,7 @@ const projects = [
 
 export function Projects() {
     return (
-        <section id="projects" className="py-24 px-4 relative">
+        <section id="projects" className="py-19 px-4 relative">
             <div className="container mx-auto max-w-5xl">
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
                     Featured{" "}
